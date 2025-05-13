@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Animação para a etiqueta */
+  @keyframes swing {
+    0% {
+      transform: rotate(6deg);
+    }
+    25% {
+      transform: rotate(8deg);
+    }
+    50% {
+      transform: rotate(4deg);
+    }
+    75% {
+      transform: rotate(7deg);
+    }
+    100% {
+      transform: rotate(6deg);
+    }
+  }
+
+  .animate-swing {
+    animation: swing 4s ease-in-out infinite;
+  }
+}
